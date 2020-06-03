@@ -33,8 +33,8 @@ contract ERC721 is Context, ERC165, IERC721, IERC721Metadata, IERC721Enumerable 
     mapping (address => EnumerableSet.UintSet) internal _holderTokens;
 
     // Enumerable mapping from token ids to their owners
-    EnumerableMap.UintToAddressMap internal _tokenOwners;
-
+    //EnumerableMap.UintToAddressMap internal _tokenOwners;
+    mapping (uint256 => address) internal _tokenOwners;
     // Mapping from token ID to approved address
     mapping (uint256 => address) private _tokenApprovals;
 
