@@ -1,7 +1,7 @@
 pragma solidity ^0.6.0;
 
 import "../GSN/Context.sol";
-import "../token/ERC20/IERC20.sol";
+import "../token/ERC20/ERC20.sol";
 import "../math/SafeMath.sol";
 import "../token/ERC20/SafeERC20.sol";
 import "../utils/ReentrancyGuard.sol";
@@ -20,10 +20,10 @@ import "../utils/ReentrancyGuard.sol";
  */
 contract Crowdsale is Context, ReentrancyGuard {
     using SafeMath for uint256;
-    using SafeERC20 for IERC20;
+    using SafeERC20 for ERC20;
 
     // The token being sold
-    IERC20 private _token;
+    ERC20 private _token;
 
     // Address where funds are collected
     address payable private _wallet;
@@ -54,7 +54,7 @@ contract Crowdsale is Context, ReentrancyGuard {
      * @param wallet Address where collected funds will be forwarded to
      * @param token Address of the token being sold
      */
-    constructor (uint256 rate, address payable wallet, IERC20 token) public {
+    constructor (uint256 rate, address payable wallet, ERC20 token) public {
         require(rate > 0, "Crowdsale: rate is 0");
         require(wallet != address(0), "Crowdsale: wallet is the zero address");
         require(address(token) != address(0), "Crowdsale: token is the zero address");
