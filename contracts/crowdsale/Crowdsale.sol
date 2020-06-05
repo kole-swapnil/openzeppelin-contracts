@@ -23,7 +23,7 @@ contract Crowdsale is Context, ReentrancyGuard {
     using SafeERC20 for ERC20;
 
     // The token being sold
-    ERC20 private _token;
+    ERC20 internal _token;
 
     // Address where funds are collected
     address payable private _wallet;
