@@ -77,7 +77,7 @@ contract Crowdsale is Context, ReentrancyGuard {
     /**
      * @return the token being sold.
      */
-    function token() public view returns (IERC20) {
+    function token() public view returns (ERC20) {
         return _token;
     }
 
