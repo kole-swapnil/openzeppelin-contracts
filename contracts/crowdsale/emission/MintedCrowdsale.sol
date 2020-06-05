@@ -1,7 +1,7 @@
 pragma solidity ^0.5.0;
 
 import "../Crowdsale.sol";
-import "../../token/ERC20/ERC20Mintable.sol";
+import "../../token/ERC20/ERC20.sol";
 
 /**
  * @title MintedCrowdsale
